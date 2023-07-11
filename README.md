@@ -44,6 +44,7 @@
 ![image](https://github.com/askarpoff/kuber_ex7/assets/108946489/01ef18dc-339b-4e57-a830-075281cc51aa)
 
 3. Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории. 
+![image](https://github.com/askarpoff/kuber_ex7/assets/108946489/d2d70265-7816-4fa2-8236-b8bbc6fa63b9)
 
 4. Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
 
