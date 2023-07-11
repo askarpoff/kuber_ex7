@@ -80,4 +80,5 @@ PV сохранился, но находится в состоянии Released.
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
    
 [task2.yaml](https://github.com/askarpoff/kuber_ex7/blob/main/task2.yaml)
+
 [sc2.yaml](https://github.com/askarpoff/kuber_ex7/blob/main/sc2.yaml)
