@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv1
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /opt/pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-vol
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task1
+  labels:
+    app: task1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task1
+  template:
+    metadata:
+      labels:
+        app: task1
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ['sh', '-c', 'while true; do echo "test" >> /share/test.txt; sleep 5; done']
+        volumeMounts:
+          - mountPath: /share
+            name: vol1
+      - name: multitool
+        image: wbitt/network-multitool
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        - name: HTTPS_PORT
+          value: "8443"
+        ports:
+        - containerPort: 8080
+          name: http-port
+        - containerPort: 8443
+          name: https-port
+        volumeMounts:
+          - mountPath: /share
+            name: vol1
+      volumes:
+        - name: vol1
+          persistentVolumeClaim:
+            claimName: pvc-vol
