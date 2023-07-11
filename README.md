@@ -74,7 +74,10 @@ PV сохранился, но находится в состоянии Released.
 ![image](https://github.com/askarpoff/kuber_ex7/assets/108946489/231bd7e7-09be-4ded-a5da-c195a1078068)
   
 3. Продемонстрировать возможность чтения и записи файла изнутри пода. 
+![image](https://github.com/askarpoff/kuber_ex7/assets/108946489/6ee796b6-4fb3-48e9-8300-dbfde6d56cb2)
 
   
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
    
+[task2.yaml](https://github.com/askarpoff/kuber_ex7/blob/main/task2.yaml)
+[sc2.yaml](https://github.com/askarpoff/kuber_ex7/blob/main/sc2.yaml)
